@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter101/101/custom_widget_learn.dart';
-import 'package:flutter101/101/indicator_learn.dart';
-import 'package:flutter101/101/navigation_learn.dart';
-import 'package:flutter101/101/padding_learn.dart';
-import 'package:flutter101/101/page_view_learn.dart';
-import 'package:flutter101/101/statefull_learn.dart';
-import 'package:flutter101/101/statfeull_life_cycle.dart';
-import 'package:flutter101/demos/color_demos_view.dart';
-import 'package:flutter101/demos/color_life_cycle_view.dart';
+import 'package:flutter101/202/model_learn_view.dart';
 
-import '101/button_learn.dart';
+import '202/tab_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,14 +17,32 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData.dark().copyWith(
-            progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.red),
+            tabBarTheme: const TabBarTheme(
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.red,
+              indicatorSize: TabBarIndicatorSize.label,
+            ),
+            bottomAppBarTheme: const BottomAppBarTheme(shape: CircularNotchedRectangle()),
+            progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
+            listTileTheme: const ListTileThemeData(contentPadding: EdgeInsets.zero),
+            cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+            textSelectionTheme: const TextSelectionThemeData(
+                selectionColor: Colors.red, cursorColor: Colors.green, selectionHandleColor: Colors.black),
+            inputDecorationTheme: const InputDecorationTheme(
+                filled: true,
+                fillColor: Colors.white,
+                iconColor: Colors.red,
+                labelStyle: TextStyle(color: Colors.lime),
+                border: OutlineInputBorder(),
+                floatingLabelStyle: TextStyle(color: Colors.red, fontSize: 24, fontWeight: FontWeight.w600)),
+            textTheme: const TextTheme(subtitle1: TextStyle(color: Colors.red)),
             appBarTheme: const AppBarTheme(
               centerTitle: true,
-              backgroundColor: Colors.transparent,
               systemOverlayStyle: SystemUiOverlayStyle.light,
+              backgroundColor: Colors.transparent,
               elevation: 0,
             )),
         debugShowCheckedModeBanner: false,
-        home: NavigationLearn());
+        home: const ModelLearn());
   }
 }
