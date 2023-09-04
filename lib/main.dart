@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter101/202/model_learn_view.dart';
-
-import '202/tab_learn.dart';
+import 'package:flutter101/202/service/service_learn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +33,7 @@ class MyApp extends StatelessWidget {
                 labelStyle: TextStyle(color: Colors.lime),
                 border: OutlineInputBorder(),
                 floatingLabelStyle: TextStyle(color: Colors.red, fontSize: 24, fontWeight: FontWeight.w600)),
-            textTheme: const TextTheme(subtitle1: TextStyle(color: Colors.red)),
+            textTheme: const TextTheme(titleMedium: TextStyle(color: Colors.red)),
             appBarTheme: const AppBarTheme(
               centerTitle: true,
               systemOverlayStyle: SystemUiOverlayStyle.light,
@@ -43,6 +41,6 @@ class MyApp extends StatelessWidget {
               elevation: 0,
             )),
         debugShowCheckedModeBanner: false,
-        home: const ModelLearn());
+        home: const ServiceLearn());
   }
 }

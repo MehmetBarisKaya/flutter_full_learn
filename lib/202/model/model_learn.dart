@@ -1,7 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, unused_local_variable, no_leading_underscores_for_local_identifiers
 // ignore_for_file: unused_field
 
-class PostModel {
+class PostModel11 {
   int? userId;
   int? id;
   String? title;
@@ -74,6 +74,7 @@ class PostModel5 {
     int _userId = userId;
     int _id = id;
     String _title = title;
+    // ignore: no_leading_underscores_for_local_identifiers
     String _body = body;
   }
 }

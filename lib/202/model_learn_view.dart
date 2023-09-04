@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter101/202/model/model_learn.dart';
 
 class ModelLearn extends StatefulWidget {
@@ -17,7 +15,7 @@ class _ModelLearnState extends State<ModelLearn> {
   void initState() {
     super.initState();
 
-    final user1 = PostModel()
+    final user1 = PostModel11()
       ..userId = 1
       ..body = "bk";
     user1.body = "mbk";
