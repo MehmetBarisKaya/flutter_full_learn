@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter101/202/service/service_learn_view.dart';
+import 'package:flutter101/202/animated_learn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,6 +41,6 @@ class MyApp extends StatelessWidget {
               elevation: 0,
             )),
         debugShowCheckedModeBanner: false,
-        home: const ServiceLearn());
+        home: const AnimatedLearnView());
   }
 }

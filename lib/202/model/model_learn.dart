@@ -74,7 +74,6 @@ class PostModel5 {
     int _userId = userId;
     int _id = id;
     String _title = title;
-    // ignore: no_leading_underscores_for_local_identifiers
     String _body = body;
   }
 }
