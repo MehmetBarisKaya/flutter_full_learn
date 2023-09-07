@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter101/202/animated_learn_view.dart';
+
+import '202/cache/secure_context/secure_context_learn.dart';
+import '202/cache/shared_list_cache.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,6 +43,6 @@ class MyApp extends StatelessWidget {
               elevation: 0,
             )),
         debugShowCheckedModeBanner: false,
-        home: const AnimatedLearnView());
+        home: const SecureContextLearn());
   }
 }
