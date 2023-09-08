@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import '202/cache/secure_context/secure_context_learn.dart';
-import '202/cache/shared_list_cache.dart';
+import 'package:flutter101/202/sheet/alert_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,6 +41,6 @@ class MyApp extends StatelessWidget {
               elevation: 0,
             )),
         debugShowCheckedModeBanner: false,
-        home: const SecureContextLearn());
+        home: const AlertLearn());
   }
 }
