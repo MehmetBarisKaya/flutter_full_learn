@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter101/303/reqres_resources/view/reqres_view.dart';
+import 'package:flutter101/303/lottie/lottie_learn.dart';
+import 'package:flutter101/product/constant/project_constant.dart';
 import 'package:flutter101/product/global/resource_context.dart';
 import 'package:flutter101/product/global/theme_notifier.dart';
 import 'package:provider/provider.dart';
@@ -25,10 +26,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: ProjectConstants.projectName,
       theme: context.watch<ThemeNotifer>().currentTheme,
       debugShowCheckedModeBanner: false,
-      home: const ReqResView(),
+      home: const LottieLearn(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter101/202/cache/shared_learn_cache.dart';
 import 'package:flutter101/303/reqres_resources/service/reqres_service.dart';
+import 'package:flutter101/product/service/project_network_manager.dart';
 
 import '../../../product/service/project_dio.dart';
 import '../model/resource_model.dart';
@@ -12,7 +13,8 @@ abstract class ReqResViewModel extends LoadingStatefull<ReqResView> with Project
   void initState() {
     // TODO: implement initState
     super.initState();
-    reqResService = ReqResService(service);
+    reqResService = ReqResService(ProjectNetworkManager.instance.service);
+    ProjectNetworkManager.instance.addBaseHeaderToToken("baris");
     _fetchResource();
   }
 

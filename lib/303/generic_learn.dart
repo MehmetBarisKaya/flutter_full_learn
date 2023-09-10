@@ -42,6 +42,15 @@ class GenericUser {
   final int money;
 
   GenericUser(this.name, this.id, this.money);
+
+  bool findUserName(String name) {
+    return this.name == name;
+  }
+
+  @override
+  String toString() {
+    return "GenericUser(name: $name,id: $id,money: $money)";
+  }
 }
 
 class AdminUser extends GenericUser {
