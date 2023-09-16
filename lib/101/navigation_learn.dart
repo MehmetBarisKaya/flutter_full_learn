@@ -8,7 +8,7 @@ class NavigationLearn extends StatefulWidget {
   State<NavigationLearn> createState() => _NavigationLearnState();
 }
 
-class _NavigationLearnState extends State<NavigationLearn> with NavigatorManager {
+class _NavigationLearnState extends State<NavigationLearn> with NavigatorManagerMixin {
   List<int> selectedItems = [];
 
   void addSelectedItems(int index, bool isAdd) {
@@ -52,7 +52,7 @@ class _NavigationLearnState extends State<NavigationLearn> with NavigatorManager
   }
 }
 
-mixin NavigatorManager {
+mixin NavigatorManagerMixin {
   void navigateToWidget(BuildContext context, Widget widget) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => widget, fullscreenDialog: true));
   }
