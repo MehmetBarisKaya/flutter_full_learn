@@ -64,7 +64,9 @@ class _SaveAndNavigateIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         onPressed: () {
-          context.read<ReqResProvider>().saveToLocal(context.read<ResourceContext>());
+          context
+              .read<ReqResProvider>()
+              .saveToLocal(context.read<ResourceContext>(), context.read<ReqResProvider>().resources);
           Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => const ImageLearn202(),
           ));

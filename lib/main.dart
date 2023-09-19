@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter101/303/lottie/lottie_learn.dart';
-import 'package:flutter101/303/mobx_image_picker/view/mobx_image_view.dart';
 import 'package:flutter101/product/constant/project_constant.dart';
 import 'package:flutter101/product/global/resource_context.dart';
 import 'package:flutter101/product/global/theme_notifier.dart';
 import 'package:flutter101/product/navigator/navigator_custom.dart';
 import 'package:provider/provider.dart';
+import '303/package/kartal_view.dart';
 import 'product/navigator/navigator_manager.dart';
 
 void main() {
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget with NavigatorCustom {
       //routes: NavigatorRoutes().items,
       onGenerateRoute: onGenerateRoute,
       navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
-      home: const MobxImageUploadView(),
+      home: const KartalView(),
     );
   }
 }
