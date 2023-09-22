@@ -1,25 +1,27 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter101/303/lottie/lottie_learn.dart';
+import 'package:flutter101/404/compute/compute_learn.dart';
 import 'package:flutter101/product/constant/project_constant.dart';
-import 'package:flutter101/product/global/resource_context.dart';
 import 'package:flutter101/product/global/theme_notifier.dart';
+import 'package:flutter101/product/init/product_init.dart';
 import 'package:flutter101/product/navigator/navigator_custom.dart';
 import 'package:provider/provider.dart';
-import '303/package/kartal_view.dart';
 import 'product/navigator/navigator_manager.dart';
 
-void main() {
-  runApp(MultiProvider(
-    providers: [
-      Provider(
-        create: (_) => ResourceContext(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => ThemeNotifer(),
-      )
-    ],
-    builder: (context, child) => const MyApp(),
-  ));
+Future<void> main() async {
+  final productInit = ProductInit();
+  await productInit.init();
+  runApp(
+    EasyLocalization(
+        supportedLocales: productInit.localizationInit.supportedLocales,
+        path: productInit.localizationInit.localizationPath,
+        fallbackLocale: const Locale('en', 'US'),
+        child: MultiProvider(
+          providers: productInit.providers,
+          builder: (context, child) => const MyApp(),
+        )),
+  );
 }
 
 class MyApp extends StatelessWidget with NavigatorCustom {
@@ -32,6 +34,14 @@ class MyApp extends StatelessWidget with NavigatorCustom {
       title: ProjectConstants.projectName,
       theme: context.watch<ThemeNotifer>().currentTheme,
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      builder: (context, child) => MediaQuery(
+          data: MediaQuery.of(context).copyWith(
+            textScaleFactor: 1,
+          ),
+          child: child ?? const SizedBox()),
       //initialRoute: "/",
       onUnknownRoute: (settings) => MaterialPageRoute(
         builder: (context) => const LottieLearn(),
@@ -39,7 +49,7 @@ class MyApp extends StatelessWidget with NavigatorCustom {
       //routes: NavigatorRoutes().items,
       onGenerateRoute: onGenerateRoute,
       navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
-      home: const KartalView(),
+      home: const ComputeLearnView(),
     );
   }
 }

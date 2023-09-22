@@ -1,6 +1,6 @@
 part of "./part_of_learn.dart";
 
-class _PartOfAppBar extends StatelessWidget with PreferredSizeWidget {
+class _PartOfAppBar extends StatelessWidget implements PreferredSizeWidget {
   const _PartOfAppBar();
 
   @override
