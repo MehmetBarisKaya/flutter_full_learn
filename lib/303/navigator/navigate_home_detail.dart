@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class NavigateHomeDetail extends StatefulWidget {
   NavigateHomeDetail({super.key, this.id});
   String? id;
@@ -12,7 +13,6 @@ class _NavigateHomeDetailState extends State<NavigateHomeDetail> {
   String? _id;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _id = widget.id;
     if (_id == null) {

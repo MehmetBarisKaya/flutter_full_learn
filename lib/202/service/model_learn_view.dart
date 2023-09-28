@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:flutter101/202/model/model_learn.dart';
 
@@ -23,7 +25,7 @@ class _ModelLearnState extends State<ModelLearn> {
     final user2 = PostModel1(1, 1, "a", "b");
     user2.body = "bk";
 
-    final user3 = PostModel2(1, 2, "a", "b");
+    final usesr3 = PostModel2(1, 2, "a", "b");
     //user3.body = "a";
 
     final user4 = PostModel3(userId: 1, id: 2, title: "a", body: "g");

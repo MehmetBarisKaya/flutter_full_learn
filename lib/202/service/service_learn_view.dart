@@ -38,7 +38,8 @@ class _ServiceLearnState extends State<ServiceLearn> {
 
   void fetchPostItems() async {
     changeLoading();
-    final response = await Dio().get("https://jsonplaceholder.typicode.com/posts");
+    final response =
+        await Dio().get("https://jsonplaceholder.typicode.com/posts");
 
     if (response.statusCode == HttpStatus.ok) {
       final myItems = response.data;
@@ -61,7 +62,11 @@ class _ServiceLearnState extends State<ServiceLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [_isLoading ? const CircularProgressIndicator.adaptive() : const SizedBox.shrink()],
+        actions: [
+          _isLoading
+              ? const CircularProgressIndicator.adaptive()
+              : const SizedBox.shrink()
+        ],
       ),
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 10),

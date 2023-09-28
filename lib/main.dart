@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter101/303/lottie/lottie_learn.dart';
-import 'package:flutter101/404/compute/compute_learn.dart';
+import 'package:flutter101/303/mobx_learn/feature/task/view/task_view.dart';
 import 'package:flutter101/product/constant/project_constant.dart';
 import 'package:flutter101/product/global/theme_notifier.dart';
 import 'package:flutter101/product/init/product_init.dart';
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget with NavigatorCustom {
       //routes: NavigatorRoutes().items,
       onGenerateRoute: onGenerateRoute,
       navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
-      home: const ComputeLearnView(),
+      home: const TaskViewView(),
     );
   }
 }
