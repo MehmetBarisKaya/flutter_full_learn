@@ -25,6 +25,22 @@ mixin _$TaskViewModel on _TaskViewModelBase, Store {
     });
   }
 
+  late final _$pageLifesAtom =
+      Atom(name: '_TaskViewModelBase.pageLifes', context: context);
+
+  @override
+  LifeState get pageLifes {
+    _$pageLifesAtom.reportRead();
+    return super.pageLifes;
+  }
+
+  @override
+  set pageLifes(LifeState value) {
+    _$pageLifesAtom.reportWrite(value, super.pageLifes, () {
+      super.pageLifes = value;
+    });
+  }
+
   late final _$fetchItemsAsyncAction =
       AsyncAction('_TaskViewModelBase.fetchItems', context: context);
 
@@ -36,7 +52,8 @@ mixin _$TaskViewModel on _TaskViewModelBase, Store {
   @override
   String toString() {
     return '''
-items: ${items}
+items: ${items},
+pageLifes: ${pageLifes}
     ''';
   }
 }

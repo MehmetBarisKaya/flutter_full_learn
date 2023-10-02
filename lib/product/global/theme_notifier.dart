@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter101/202/theme/dark_theme.dart';
+import 'package:flutter101/202/theme/light_theme.dart';
 
 class ThemeNotifer extends ChangeNotifier {
   bool isLightTheme = false;
@@ -8,5 +10,6 @@ class ThemeNotifer extends ChangeNotifier {
     notifyListeners();
   }
 
-  ThemeData get currentTheme => isLightTheme ? ThemeData.light() : ThemeData.dark();
+  ThemeData get currentTheme =>
+      isLightTheme ? LightTheme().theme : DarkTheme().theme;
 }
